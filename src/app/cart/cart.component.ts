@@ -21,9 +21,15 @@ export class CartComponent {
   ) {}
 
   onSubmit(): void {
+    const formData = this.checkoutForm.value;
     // Process checkout data here
     this.items = this.cartService.clearCart();
-    window.alert(`Your order has been submitted, ${this.checkoutForm.value}`);
+    window.alert(
+      `Your order has been submitted!
+  
+      Name: ${formData.name}
+      Address: ${formData.address}`
+    );
     this.checkoutForm.reset();
   }
 }
